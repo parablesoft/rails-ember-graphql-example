@@ -3,9 +3,18 @@
     <div class="p-10 w-4/5 bg-white mx-auto border-b-4 border-grey-darker shadow">
       <div class="flex">
         <div class="mt-4 w-full">
-          <div class="text-4xl text-center">
+          <div class="text-4xl text-center mb-6">
             Welcome to Yet Another To-Do List
           </div>
+          <TodoLists 
+            @lists={{this.model}} 
+            @onUpdateTodoList={{action 'updateTodoList'}}
+            @onComplete={{action 'onComplete'}}
+            @onAddList={{action 'addList'}}
+            @onAddTodo={{action 'addTodo'}}
+            @onUpdateTodo={{action 'updateTodo'}}
+          />
+          {{log this.model}}
         </div>
       </div>
     </div>

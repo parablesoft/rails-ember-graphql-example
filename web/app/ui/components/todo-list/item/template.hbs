@@ -1,0 +1,14 @@
+<div class="mb-2 {{if @todo.completedAt 'line-through'}}">
+  {{#unless isEditing}}
+  <input 
+    onclick={{action handleClick}} 
+    checked={{@todo.completedAt}} 
+    type="checkbox"
+   /> 
+    <span 
+      onclick={{action edit}}
+      class="cursor-pointer hover:underline">{{@todo.content}}</span>
+  {{else}}
+  {{input class="p-2 border-2 rounded w-2/5" value=newContent enter=(action updateTodo) }}
+  {{/unless}}
+</div>

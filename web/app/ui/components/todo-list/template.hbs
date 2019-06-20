@@ -1,0 +1,23 @@
+<div class="mb-8 bg-grey-lighter p-4 rounded shadow-md">
+  <div class="mb-2">
+    {{#unless isEditing}}
+    <div onclick={{action edit}} class="text-2xl cursor-pointer hover:underline">{{@list.name}}</div>
+    {{else}}
+    {{input value=newListName class="rounded p-2 border-2 w-2/5" enter=(action updateList)}}
+    {{/unless}}
+  </div>
+
+  {{#each @list.todos as |todo index|}}
+    <TodoList::Item
+      @todoIndex={{index}}
+      @listIndex={{@listIndex}}
+      @todo={{todo}}
+      @onComplete={{@onComplete}}
+      @onUpdateTodo={{@onUpdateTodo}}
+    />
+  {{/each}}
+  <TodoList::ItemForm 
+    @listIndex={{@listIndex}}
+    @onAddTodo={{@onAddTodo}}
+  />
+</div>

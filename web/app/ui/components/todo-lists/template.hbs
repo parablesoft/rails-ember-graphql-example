@@ -1,0 +1,14 @@
+{{#each @lists as |list index|}}
+  <TodoList 
+    @list={{list}}
+    @listIndex={{index}}
+    @onComplete={{@onComplete}}
+    @onAddTodo={{@onAddTodo}}
+    @onUpdateTodo={{@onUpdateTodo}}
+    @onUpdateTodoList={{@onUpdateTodoList}}
+  />
+{{/each}}
+
+
+{{input enter=(action addList) class="p-4 rounded border-2" value=newListName placeholder="Add a new list" }}
+<button class="btn bg-blue text-white p-4 rounded" onclick={{action addList}}>Add List</button>
