@@ -66,3 +66,10 @@ ember install ember-cli-tailwind
 ```    
 podModulePrefix: "web/ui",
 ```
+
+
+## Tools
+
+1. https://electronjs.org/apps/graphiql
+A GUI for editing and testing GraphQL queries and mutations 
+
