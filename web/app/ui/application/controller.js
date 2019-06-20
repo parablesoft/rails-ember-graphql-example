@@ -5,6 +5,15 @@ import { action } from "@ember-decorators/object"
 
 export default class ApplicationController extends Controller{
 
+  @action deleteTodo(listIndex,todoIndex){
+    let todos = this.model[listIndex].todos
+    todos.removeAt(todoIndex)
+  }
+
+
+  @action deleteList(listIndex){
+    this.model.removeAt(listIndex)
+  }
 
   @action updateTodoList(name, listIndex){
     let list = this.model[listIndex]

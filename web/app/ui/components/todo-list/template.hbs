@@ -3,7 +3,8 @@
     {{#unless isEditing}}
     <div onclick={{action edit}} class="text-2xl cursor-pointer hover:underline">{{@list.name}}</div>
     {{else}}
-    {{input value=newListName class="rounded p-2 border-2 w-2/5" enter=(action updateList)}}
+    {{input value=newListName class="rounded p-2 border-2 w-2/5" enter=(action updateList)}} 
+    <a href="#" class="text-sm" onclick={{action cancelEdit}}>cancel</a>
     {{/unless}}
   </div>
 
@@ -14,10 +15,15 @@
       @todo={{todo}}
       @onComplete={{@onComplete}}
       @onUpdateTodo={{@onUpdateTodo}}
+      @onDeleteTodo={{@onDeleteTodo}}
     />
   {{/each}}
   <TodoList::ItemForm 
     @listIndex={{@listIndex}}
     @onAddTodo={{@onAddTodo}}
   />
+
+  <div class="text-right">
+    <a href="#" class="text-sm text-red-light"  onclick={{action deleteList}}>delete</a>
+  </div>
 </div>

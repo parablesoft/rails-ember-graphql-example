@@ -1,14 +1,21 @@
-<div class="mb-2 {{if @todo.completedAt 'line-through'}}">
+<div class="mb-2 ">
   {{#unless isEditing}}
-  <input 
-    onclick={{action handleClick}} 
-    checked={{@todo.completedAt}} 
-    type="checkbox"
-   /> 
+  <div class="flex">
+    <input 
+      onclick={{action handleClick}} 
+      checked={{@todo.completedAt}} 
+      class="mr-2"
+      type="checkbox"
+    /> 
     <span 
       onclick={{action edit}}
-      class="cursor-pointer hover:underline">{{@todo.content}}</span>
+      class="cursor-pointer hover:underline {{if @todo.completedAt 'line-through'}}"
+    >{{@todo.content}}</span>
+
+    <a class="ml-2 text-sm text-red-light" {{action deleteTodo}} href="#">delete</a>
+  </div>
   {{else}}
   {{input class="p-2 border-2 rounded w-2/5" value=newContent enter=(action updateTodo) }}
+  <a class="text-sm text-red-light ml-10" {{action cancelEdit}} href="#">cancel</a>
   {{/unless}}
 </div>

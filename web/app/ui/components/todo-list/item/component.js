@@ -8,6 +8,26 @@ export default class TodoListItem extends Component{
   @tracked isEditing = false
   @tracked newContent = this.args.todo.content
 
+  cancelEdit(){
+    this.isEditing=false
+    this.newContent = this.args.todo.content
+  }
+
+  deleteTodo(){
+    let confirmed = confirm("Are you sure?")
+
+    if(!confirmed)
+      return false
+
+
+    let {
+      listIndex,
+      todoIndex
+    } = this.args
+
+    this.args.onDeleteTodo(listIndex,todoIndex)
+  }
+
 
   updateTodo(){
     let {
