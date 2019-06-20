@@ -1,7 +1,7 @@
 #README
 
 
-## Bootstrapping the application
+## Bootstrapping a new application
 
 ### Structure
 
@@ -66,4 +66,3 @@ ember install ember-cli-tailwind
 ```    
 podModulePrefix: "web/ui",
 ```
-
