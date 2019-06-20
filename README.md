@@ -67,6 +67,44 @@ ember install ember-cli-tailwind
 podModulePrefix: "web/ui",
 ```
 
+4. Install ember-apollo-client
+```bash
+ember install ember-apollo-client
+```
+
+5. Configure ember-apollo - Please note, there are additional steps for authentication
+
+In your app's `config/environment.js`, configure the URL for the GraphQL API.
+
+```js
+let ENV = {
+  ...
+  apollo: {
+    apiURL: 'http://localhost:3000',
+  },
+  ...
+}
+```
+
+In your app's `ember-cli-build.js`, you can set build time options for broccoli-graphql-filter to keep file extensions in `.graphql` files.
+
+
+```js
+module.exports = function(defaults) {
+  let app = new EmberApp(defaults, {
+    emberApolloClient: {
+      keepGraphqlFileExtension: true
+    }
+  });
+
+  return app.toTree();
+};
+```
+
+
+
+
+
 
 ## Tools
 
