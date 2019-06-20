@@ -1,7 +1,7 @@
 #README
 
 
-## Bootstrapping the application
+## Bootstrapping a new application
 
 ### Structure
 
