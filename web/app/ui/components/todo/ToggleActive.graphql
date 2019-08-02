@@ -1,0 +1,8 @@
+mutation ToggleActive($id: ID!, $active: Boolean!) {
+  updateTodo(id: $id, active: $active) {
+    todo {
+      id
+      active
+    }
+  }
+}

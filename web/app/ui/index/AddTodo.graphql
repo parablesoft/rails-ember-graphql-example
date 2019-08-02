@@ -1,0 +1,9 @@
+mutation AddTodo($name: String!) {
+  addTodo(name: $name) {
+    todo {
+      id
+      name
+      active
+    }
+  }
+}

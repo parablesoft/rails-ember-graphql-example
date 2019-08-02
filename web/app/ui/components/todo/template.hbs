@@ -1,0 +1,7 @@
+<div class="bg-white w-full px-12 py-6 text-lg flex flex-row">
+  <input class="toggle mr-4" type="checkbox" oninput={{action this.toggle}}>
+  <label>{{@todo.name}} -- {{@todo.active}}</label>
+  <button
+    onclick={{action this.remove}}
+    class="ml-auto bg-red px-3 py-1 text-white">delete</button>
+</div>

@@ -98,4 +98,8 @@ export default {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+
+
+  'todos-grey-lightest': '#f5f5f5',
+  'todos-logo-color': 'rgba(175,47,47,.15)',
 };

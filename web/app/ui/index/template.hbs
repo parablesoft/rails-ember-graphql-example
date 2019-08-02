@@ -1,0 +1,26 @@
+
+<div class="w-128 mx-auto">
+  <h1 class="text-10xl mt-4 text-center text-todos-logo-color font-hairline">
+    todos
+  </h1>
+
+  <form onsubmit={{action this.addNewTodo}}>
+    <input
+      oninput={{action this.handleNewTodoInput}}
+      class="w-full px-12 py-6 text-lg todo-input"
+      placeholder="What needs to be done?"
+      autofocus=""
+      type="text" />
+  </form>
+
+  {{#each this.model as |todo|}}
+    <Todo
+      @todo={{todo}}
+      @toggleIsActive={{action this.toggleTodo todo}}
+      @removeTodo={{action this.removeTodo}}
+    />
+  {{/each}}
+
+</div>
+
+{{outlet}}

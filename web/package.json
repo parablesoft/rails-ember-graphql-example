@@ -18,10 +18,12 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@ember/jquery": "^0.6.1",
     "@ember/optional-features": "^0.7.0",
     "@glimmer/component": "^0.14.0-alpha.3",
     "babel-eslint": "^8.0.2",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-apollo-client": "^2.0.0-beta.4",
     "ember-auto-import": "^1.2.20",
     "ember-cli": "github:ember-cli/ember-cli#ba9e3ea9bcad1c6e2299e40fe265cffe61d7a25b",
     "ember-cli-app-version": "^3.2.0",
@@ -37,6 +39,7 @@
     "ember-cli-uglify": "^2.1.0",
     "ember-data": "^3.10.0",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "^6.3.1",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^4.1.2",
@@ -44,10 +47,14 @@
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/55f876ebc10bd1645e1e62fc5e0408266952259b.tgz",
     "eslint-plugin-ember": "^6.0.1",
     "eslint-plugin-node": "^8.0.1",
+    "graphql": "^14.0.2",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
   }
 }
